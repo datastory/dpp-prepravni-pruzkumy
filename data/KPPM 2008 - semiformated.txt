@@ -1,6 +1,8 @@
 //JR KPPM 27936
-325;208;
-39764;"KPPM 2008 - HIST 1995";
+325;
+208; - root ID, používá se asi pro možnost slouèení prùzkumù do jednoho souboru
+39764; - datum konání prùzkumu jako poèet dní od 1. 1. 1900
+"KPPM 2008 - HIST 1995"; - název prùzkumu
 875;"";
 "1.1.1900 5:00:00";"1.1.1900";"1.1.1900";
 90;True;
@@ -12,10 +14,10 @@
 10; - poèet sloupcù v tabulce stanice
 
 == linky ==
-???
-ID1 linky
+root ID
+ID linky
 Název linky
-ID2 linky
+ID linky podle JØ
 
 208;742;"A";991;
 208;743;"B";992;
@@ -23,15 +25,15 @@ ID2 linky
 
 
 == stanice ==
-linky_ID1
-???
-???
+ID linky
+doba jízdy do stanice ve smìru 2 (sekundy)
+doba jízdy do stanice ve smìru 1 (sekundy)
 Název stanice
 ID stanice
-???
-???
-???
-???
+ID stanice podle JØ
+vzdálenost do stanice ve smìru 2 (metry)
+vzdálenost do stanice ve smìru 1 (metry)
+doba pobytu vlakù ve stanici (sekundy)
 Krátký název stanice
 
 742;0;35;"Depo Hostivaø";9793;1071;0;247;20;"HO";
@@ -100,14 +102,14 @@ Krátký název stanice
 3; - Poèet sloupcù v tabulce atributy propojení
 
 
-== propojení == - pøedstavuje vztah (propojení) mezi dvìmi stanicemi, nejde o fyzické propojení (snad)
-?? - možná root ID
+== propojení == - pøedstavuje vztah (propojení) mezi dvìma východy stanic
+root ID
 ID záznamu
-jestli jde o spojení jedné a té samé stanice
+True pokud se shodují východy i ID stanic X a Y
 ID stanice X
 ID stanice Y
-?? varianta - protože nìktré spojení stanic X a Y je tu vícekrát (1 - 3) 
-?? (1 - 3)
+východ stanice X
+východ stanice Y
 
 208;484976;True;9793;9793;1;1;
 208;484977;False;9794;9793;1;1;
@@ -5259,7 +5261,7 @@ ID stanice Y
 
 == atributy propojení ==
 propojení ID
-?? - Atribut ID (1 - 76)
+poøadí ètvrthodinového intervalu od 5:00
 ?? - Value
 
 484976;3;3;
@@ -201437,17 +201439,17 @@ propojení ID
 
 
 -- ?? --
-258;
-19608;
-8;
-4;
+258; - poèet záznamù následující tabulky
+19608; - poèet záznamù následující+1 tabulky
+8; - poèet sloupcù následující tabulky
+4; - poèet sloupcù následující+1 tabulky
 
 == ?? ==
-?? - možná root ID
+root ID
 stanice ID X
 stanice ID Y
-??
-??
+?? | Èísla jsou v rozmezí 0-2, alespoò jedno z nich je 0. Když jsou obì 0, je to relace
+?? | mezi fyzicky sousedními stanicemi. Jinak se jedná o relaci uvnitø jedné stanice.
 ID tohoto záznamu
 linky ID2 X
 linky ID2 Y
@@ -201713,9 +201715,9 @@ linky ID2 Y
 
 
 == ?? ==
-?? atributy propojení - Atribut ID - protože je v rozsahu 1-67
+poøadí ètvrthodinového intervalu od 5:00
 ??
-??
+?? èíslo s desetinnou èárkou
 pøedchozí tabulka ID
 
 1;98;0;54817;
@@ -221332,6 +221334,18 @@ pøedchozí tabulka ID
 279; poèet záznamù následující tabulky
 9; poèet sloupcù následující tabulky
 
+== ?? statistika vstupù do stanic, obsahuje i souèty a historická data ==
+root ID
+ID záznamu
+název linky (nebo "souèet")
+??
+??
+rok
+ID zastávky (nebo 0 pokud je souèet)
+èíslo vstupu
+??
+
+
 208;39414;"A";125;5696;2008;9793;1;7873;
 208;39415;"A";134;13724;2008;9794;1;16519;
 208;39416;"A";151;13910;2008;9795;1;18927;
@@ -221617,22 +221631,22 @@ pøedchozí tabulka ID
 8139; - poèet øádkù další tabulky
 15; - poèet sloupcù další tabulky
 
-== ?? ==
-?? - root ID
+== ?? statistika relací mezi stanicemi, obsahuje i souèty a historická data  ==
+root ID
+ID záznamu
+??
+název linky/linek/"souèet"/"prùmìr"
 ??
 ??
 ??
 ??
+?? èíslo s desetinnou èárkou
 ??
 ??
 ??
-??
-??
-??
-??
-??
-??
-??
+rok
+ID stanice X
+ID stanice Y
 
 208;528344;11;"A";15;1;11978;1704;27,391;0;1022;916;2000;9804;9805;
 208;528345;13;"A";15;1;11978;2054;34,708;0;836;720;2000;9805;9804;
@@ -229779,8 +229793,10 @@ pøedchozí tabulka ID
 5080; - poèet øádkù
 17; - poèet sloupcù
 
-== ?? ==
-?? - root ID
+== ?? statistika asi o stanicích, obsahuje i historická data ==
+root ID
+ID záznamu
+název linky
 ??
 ??
 ??
@@ -229790,10 +229806,8 @@ pøedchozí tabulka ID
 ??
 ??
 ??
-??
-??
-??
-??
+rok
+ID stanice
 ??
 ??
 ??
