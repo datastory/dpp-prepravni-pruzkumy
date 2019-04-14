@@ -17,7 +17,7 @@
 root ID
 ID linky
 Název linky
-ID linky podle JØ
+Èíslo linky
 
 208;742;"A";991;
 208;743;"B";992;
@@ -30,7 +30,7 @@ doba jízdy do stanice ve smìru 2 (sekundy)
 doba jízdy do stanice ve smìru 1 (sekundy)
 Název stanice
 ID stanice
-ID stanice podle JØ
+ID uzlu stanice
 vzdálenost do stanice ve smìru 2 (metry)
 vzdálenost do stanice ve smìru 1 (metry)
 doba pobytu vlakù ve stanici (sekundy)
@@ -105,7 +105,7 @@ Krátký název stanice
 == propojení == - pøedstavuje vztah (propojení) mezi dvìma východy stanic
 root ID
 ID záznamu
-True pokud se shodují východy i ID stanic X a Y
+True pokud je cesta nelogická (stejný zaèátek i cíl)
 ID stanice X
 ID stanice Y
 východ stanice X
@@ -201714,10 +201714,10 @@ linky ID2 Y
 208;9848;9849;0;0;55074;993;993;
 
 
-== ?? ==
+== záznamy o cestách mezi dvojicí stanic ==
 poøadí ètvrthodinového intervalu od 5:00
-??
-?? èíslo s desetinnou èárkou
+poèet cestujících ve ètvrthodinì
+poèet vlakù ve ètvrthodinì
 pøedchozí tabulka ID
 
 1;98;0;54817;
@@ -221334,16 +221334,16 @@ pøedchozí tabulka ID
 279; poèet záznamù následující tabulky
 9; poèet sloupcù následující tabulky
 
-== ?? statistika vstupù do stanic, obsahuje i souèty a historická data ==
+== záznamy o vydaných lístcích, obsahuje i souèty a historická data ==
 root ID
 ID záznamu
 název linky (nebo "souèet")
-??
-??
+poèet nelogických cest
+poèet vybraných lístkù
 rok
-ID zastávky (nebo 0 pokud je souèet)
+ID stanice (nebo 0 pokud je souèet)
 èíslo vstupu
-??
+vydané lístky
 
 
 208;39414;"A";125;5696;2008;9793;1;7873;
